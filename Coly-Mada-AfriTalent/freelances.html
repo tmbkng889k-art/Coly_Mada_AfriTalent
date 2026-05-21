@@ -3,17 +3,354 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AfriTalent - Accueil</title>
+    <title>AfriTalent - Freelances</title>
 
     <!-- Bootstrap 5 via CDN : feuille de style -->
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" >
-
+    <!-- Bootstrap Icons -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
      <!-- Votre feuille de style personnelle -->
       <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <!-- Le contenu de la page sera ajoute ici -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class = "navbar-brand fw-bold" href="index.html">AfriTalent</a>
+              <button class="navbar-toggler" type="button"
+                     data-bs-toggle="collapse"
+                     data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>     
+
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-items"><a class="nav-link active" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="freelances.html">Freelances</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tarifs.html">Tarifs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">A propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-3"><a  class="btn btn-primary rounded-pill px-4" href="#">Rejoindre AfriTalent</a></li>
+                </ul>
+               
+            </div>
+        </div>
+        
+     </nav>
+     <main>
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h1 class="fw-bold mb-4">Nos Freelances Experts</h1>
+                
+                <!-- Barre de filtres -->
+                <div class="card border-0 shadow-sm p-3 mb-5 rounded-4">
+                    <div class="row g-3 align-items-center">
+                        <div class="col-md-4">
+                            <label class="form-label fw-bold small">Catégorie</label>
+                            <select class="form-select border-0 bg-light" id="filterCategory">
+                                <option value="all">Toutes les catégories</option>
+                                <option value="dev">Développement Web</option>
+                                <option value="design">Design UI/UX</option>
+                                <option value="marketing">Marketing Digital</option>
+                                <option value="data">Data & IA</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label fw-bold small">Disponibilité</label>
+                            <select class="form-select border-0 bg-light">
+                                <option value="all">Tous</option>
+                                <option value="immediate">Immédiate</option>
+                                <option value="week">Sous 1 semaine</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label fw-bold small">Recherche</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control border-0 bg-light" placeholder="Ex: React, Figma...">
+                                <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grille de profils -->
+                <div class="row g-4" id="freelanceGrid">
+                    <!-- Profil 1 -->
+                    <div class="col-md-6 col-lg-4 freelance-card" data-category="dev">
+                        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="images/freelancer3.jpg" class="rounded-circle me-3" width="60" alt="Freelance">
+                                    <div>
+                                        <h5 class="fw-bold mb-0">Amadou Diallo</h5>
+                                        <p class="text-primary small mb-0">Développeur Fullstack</p>
+                                    </div>
+                                </div>
+                                <p class="text-muted small">Expert React et Node.js avec 5 ans d'expérience dans le e-commerce.</p>
+                                <div class="mb-3">
+                                    <span class="badge bg-light text-dark">React</span>
+                                    <span class="badge bg-light text-dark">Node.js</span>
+                                    <span class="badge bg-light text-dark">AWS</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center border-top pt-3">
+                                    <div>
+                                        <span class="fw-bold">45€</span><span class="text-muted small">/h</span>
+                                    </div>
+                                    <div class="text-warning small">
+                                        <i class="bi bi-star-fill"></i> 4.9 (120 avis)
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary w-100 mt-3 rounded-pill">Voir le profil</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Profil 2 -->
+                    <div class="col-md-6 col-lg-4 freelance-card" data-category="design">
+                        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="images/freelancer2.jpg" class="rounded-circle me-3" width="60" alt="Freelance">
+                                    <div>
+                                        <h5 class="fw-bold mb-0">Fatou Sow</h5>
+                                        <p class="text-primary small mb-0">Designer UI/UX</p>
+                                    </div>
+                                </div>
+                                <p class="text-muted small">Spécialisée dans la création d'interfaces mobiles intuitives et modernes.</p>
+                                <div class="mb-3">
+                                    <span class="badge bg-light text-dark">Figma</span>
+                                    <span class="badge bg-light text-dark">Adobe XD</span>
+                                    <span class="badge bg-light text-dark">Prototypage</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center border-top pt-3">
+                                    <div>
+                                        <span class="fw-bold">35€</span><span class="text-muted small">/h</span>
+                                    </div>
+                                    <div class="text-warning small">
+                                        <i class="bi bi-star-fill"></i> 4.8 (85 avis)
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary w-100 mt-3 rounded-pill">Voir le profil</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Profil 3 -->
+                    <div class="col-md-6 col-lg-4 freelance-card" data-category="marketing">
+                        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="images/freelance5.jpg" class="rounded-circle me-3" width="60" alt="Freelance">
+                                    <div>
+                                        <h5 class="fw-bold mb-0">Jean-Paul Kamga</h5>
+                                        <p class="text-primary small mb-0">Expert SEO & Ads</p>
+                                    </div>
+                                </div>
+                                <p class="text-muted small">Aide les startups à multiplier leur trafic organique par 3 en 6 mois.</p>
+                                <div class="mb-3">
+                                    <span class="badge bg-light text-dark">SEO</span>
+                                    <span class="badge bg-light text-dark">Google Ads</span>
+                                    <span class="badge bg-light text-dark">Analytics</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center border-top pt-3">
+                                    <div>
+                                        <span class="fw-bold">40€</span><span class="text-muted small">/h</span>
+                                    </div>
+                                    <div class="text-warning small">
+                                        <i class="bi bi-star-fill"></i> 5.0 (42 avis)
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary w-100 mt-3 rounded-pill">Voir le profil</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Profil 4 -->
+                    <div class="col-md-6 col-lg-4 freelance-card" data-category="marketing">
+                        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="images/freelance6.jpg" class="rounded-circle me-3" width="60" alt="Freelance">
+                                    <div>
+                                        <h5 class="fw-bold mb-0">Anta Coly</h5>
+                                        <p class="text-primary small mb-0">Expert Data & Cloud</p>
+                                    </div>
+                                </div>
+                                <p class="text-muted small">Aide les startups à multiplier leur trafic organique par 3 en 6 mois.</p>
+                                <div class="mb-3">
+                                    <span class="badge bg-light text-dark">Data</span>
+                                    <span class="badge bg-light text-dark">Google Ads</span>
+                                    <span class="badge bg-light text-dark">Clouds</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center border-top pt-3">
+                                    <div>
+                                        <span class="fw-bold">50€</span><span class="text-muted small">/h</span>
+                                    </div>
+                                    <div class="text-warning small">
+                                        <i class="bi bi-star-fill"></i> 5.0 (42 avis)
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary w-100 mt-3 rounded-pill">Voir le profil</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Profil 5 -->
+                    <div class="col-md-6 col-lg-4 freelance-card" data-category="marketing">
+                        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="images/freelance8.jpg" class="rounded-circle me-3" width="60" alt="Freelance">
+                                    <div>
+                                        <h5 class="fw-bold mb-0">Amy Sarr</h5>
+                                        <p class="text-primary small mb-0">Expert SEO & Ads</p>
+                                    </div>
+                                </div>
+                                <p class="text-muted small">Aide les startups à multiplier leur trafic organique par 4 en 5 mois.</p>
+                                <div class="mb-3">
+                                    <span class="badge bg-light text-dark">SEO</span>
+                                    <span class="badge bg-light text-dark">DevOps </span>
+                                    <span class="badge bg-light text-dark">Analytics</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center border-top pt-3">
+                                    <div>
+                                        <span class="fw-bold">30€</span><span class="text-muted small">/h</span>
+                                    </div>
+                                    <div class="text-warning small">
+                                        <i class="bi bi-star-fill"></i> 5.0 (42 avis)
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary w-100 mt-3 rounded-pill">Voir le profil</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Profil 6 -->
+                    <div class="col-md-6 col-lg-4 freelance-card" data-category="marketing">
+                        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="images/freelance5.jpg" class="rounded-circle me-3" width="60" alt="Freelance">
+                                    <div>
+                                        <h5 class="fw-bold mb-0">Jean-Paul Coly</h5>
+                                        <p class="text-primary small mb-0">Expert Marketing</p>
+                                    </div>
+                                </div>
+                                <p class="text-muted small">Aide les startups à multiplier leur trafic organique en marketing par 3 en 6 mois.</p>
+                                <div class="mb-3">
+                                    <span class="badge bg-light text-dark">Marketer</span>
+                                    <span class="badge bg-light text-dark">Google Ads</span>
+                                    <span class="badge bg-light text-dark">Analytics</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center border-top pt-3">
+                                    <div>
+                                        <span class="fw-bold">60€</span><span class="text-muted small">/h</span>
+                                    </div>
+                                    <div class="text-warning small">
+                                        <i class="bi bi-star-fill"></i> 5.0 (42 avis)
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary w-100 mt-3 rounded-pill">Voir le profil</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Profil 7 -->
+                    <div class="col-md-6 col-lg-4 freelance-card" data-category="marketing">
+                        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="images/freelance3.jpg" class="rounded-circle me-3" width="60" alt="Freelance">
+                                    <div>
+                                        <h5 class="fw-bold mb-0">Khady Kamga</h5>
+                                        <p class="text-primary small mb-0">Expert Digital & Ads</p>
+                                    </div>
+                                </div>
+                                <p class="text-muted small">Aide les startups à multiplier leur trafic organique par 3 en 6 mois.</p>
+                                <div class="mb-3">
+                                    <span class="badge bg-light text-dark">Digital</span>
+                                    <span class="badge bg-light text-dark">Google Ads</span>
+                                    <span class="badge bg-light text-dark">Analytics</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center border-top pt-3">
+                                    <div>
+                                        <span class="fw-bold">70€</span><span class="text-muted small">/h</span>
+                                    </div>
+                                    <div class="text-warning small">
+                                        <i class="bi bi-star-fill"></i> 5.0 (42 avis)
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary w-100 mt-3 rounded-pill">Voir le profil</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Profil 8 -->
+                    <div class="col-md-6 col-lg-4 freelance-card" data-category="marketing">
+                        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="images/freelance5.jpg" class="rounded-circle me-3" width="60" alt="Freelance">
+                                    <div>
+                                        <h5 class="fw-bold mb-0">Mada Bathily</h5>
+                                        <p class="text-primary small mb-0">Expert SEO & Ads</p>
+                                    </div>
+                                </div>
+                                <p class="text-muted small">Aide les startups à multiplier leur trafic organique par 3 en 6 mois.</p>
+                                <div class="mb-3">
+                                    <span class="badge bg-light text-dark">SEO</span>
+                                    <span class="badge bg-light text-dark">Google Ads</span>
+                                    <span class="badge bg-light text-dark">Analytics</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center border-top pt-3">
+                                    <div>
+                                        <span class="fw-bold">80€</span><span class="text-muted small">/h</span>
+                                    </div>
+                                    <div class="text-warning small">
+                                        <i class="bi bi-star-fill"></i> 5.0 (42 avis)
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary w-100 mt-3 rounded-pill">Voir le profil</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Profil 9 -->
+                    <div class="col-md-6 col-lg-4 freelance-card" data-category="marketing">
+                        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <div class="p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="images/freelance5.jpg" class="rounded-circle me-3" width="60" alt="Freelance">
+                                    <div>
+                                        <h5 class="fw-bold mb-0">Fatou Bathily</h5>
+                                        <p class="text-primary small mb-0">Expert Developpement Web</p>
+                                    </div>
+                                </div>
+                                <p class="text-muted small">Aide les startups à multiplier leur trafic organique par 3 en 6 mois.</p>
+                                <div class="mb-3">
+                                    <span class="badge bg-light text-dark">Web</span>
+                                    <span class="badge bg-light text-dark">Google Ads</span>
+                                    <span class="badge bg-light text-dark">Analytics</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center border-top pt-3">
+                                    <div>
+                                        <span class="fw-bold">80€</span><span class="text-muted small">/h</span>
+                                    </div>
+                                    <div class="text-warning small">
+                                        <i class="bi bi-star-fill"></i> 5.0 (42 avis)
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary w-100 mt-3 rounded-pill">Voir le profil</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container text-center">
+            <p>&copy; <span id="current-year"></span> AfriTalent. Tous droits réservés.</p>
+        </div>
+    </footer>
 
     <!-- Bootstrap 5 via CDN : csript JavaScript -->
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
