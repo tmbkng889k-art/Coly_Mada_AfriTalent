@@ -62,10 +62,12 @@
                                     <div class="col-md-6">
                                         <label class="form-label fw-bold small">Nom complet</label>
                                         <input type="text" class="form-control bg-light border-0" id="name" required>
+                                        <small id="nameError" class="text-danger"></small>
                                     </div>
                                     <div class="col-md-6">
                                         <label class="form-label fw-bold small">Email</label>
                                         <input type="email" class="form-control bg-light border-0" id="email" required>
+                                        <small id="emailError" class="text-danger"></small>
                                     </div>
                                     <div class="col-12">
                                         <label class="form-label fw-bold small">Sujet</label>
@@ -78,6 +80,7 @@
                                     <div class="col-12">
                                         <label class="form-label fw-bold small">Message</label>
                                         <textarea class="form-control bg-light border-0" id="message" rows="5" required></textarea>
+                                        <small id="messageError" class="text-danger"></small>
                                     </div>
                                     <div class="col-12">
                                         <button type="submit" class="btn btn-primary px-5 rounded-pill fw-bold">Envoyer le message</button>

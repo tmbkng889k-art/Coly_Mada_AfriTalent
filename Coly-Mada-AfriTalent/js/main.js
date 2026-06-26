@@ -106,6 +106,72 @@ toggleBtn.addEventListener('click',()=> {
     }
 
 
+    // 7. Filtrage dynamique des freelances
+    const filterCategory = document.getElementById('filterCategory');
+    const freelanceCards = document.querySelectorAll('.freelance-card');
+
+    filterCategory?.addEventListener('change', (e) => {
+        const selectedCategory = e.target.value;
+
+        freelanceCards.forEach(card => {
+            const cardCategory = card.getAttribute('data-category');
+            
+            if (selectedCategory === 'all' || cardCategory === selectedCategory) {
+                card.style.display = 'block';
+                setTimeout(() => card.style.opacity = '1', 10);
+            } else {
+                card.style.opacity = '0';
+                setTimeout(() => card.style.display = 'none', 300);
+            }
+        });
+    });
+
+    // 8. Validation du formulaire de contact
+    const contactForm = document.getElementById('contactForm');
+    const formSuccess = document.getElementById('formSuccess');
+
+    contactForm?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+        
+        let isValid = true;
+
+        document.getElementById("nameError").textContent = "";
+        if (name.length < 2) {
+             document.getElementById("nameError").textContent = "Veuillez entrer un nom valide.";
+            
+            isValid = false;
+        }
+         document.getElementById("emailError").textContent = "";
+        if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+             document.getElementById("emailError").textContent = "Veuillez entrer une adresse email valide.";
+            isValid = false;
+        }
+         document.getElementById("messageError").textContent = "";
+        if (message.length < 20) {
+             document.getElementById("messageError").textContent = "Votre message doit contenir au moins 20 caractères.";
+            isValid = false;
+        }
+
+        if (isValid) {
+            // Simulation d'envoi
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm"></span> Envoi...';
+
+            setTimeout(() => {
+                contactForm.reset();
+                contactForm.classList.add('d-none');
+                formSuccess.classList.remove('d-none');
+                console.log('Formulaire envoyé avec succès !');
+            }, 1500);
+        }
+    });
+
+
     
     
     
