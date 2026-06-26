@@ -1,15 +1,44 @@
-/* COMMIT 3 */
+
 /* VARIABLES CSS  */
+
+:root {
+
+    --bg-light: #ffffff;
+
+    --bg-card: #ffffff;
+
+    --text-main: #212529;
+
+    --text-muted: #6c757d;
+
+    --primary-color: #4e6fca;
+
+    --primary-hover: #142c5e;
+
+    --secondary-color: #0c101b;
+
+    --accent-color: #f59e0b;
+
+    --font-main: 'Inter', sans-serif;
+
+    --font-heading: 'Outfit', sans-serif;
+    --white: #ffffff;
+
+}
+
+
 :root {
     /* Couleurs */
     --primary-color: #4e6fca;       
     --primary-hover: #142c5e;
-    --secondary-color: #0c101b;     
-    --accent-color: #f59e0b;        
-    --text-main: #5d6e86;           
+    --secondary-color: #0c101b; 
+    --bg-light:rgba(194, 191, 191, 0.473);
+    --text-main: #212529;    
+    --accent-color: #f59e0b;                   
     --text-muted: #1c4b8d;
-    --bg-light: #eceff3;
-    --white: #ffffff;
+    
+
+
     
     /* Typographie */
     --font-main: 'Inter', sans-serif;
@@ -20,8 +49,13 @@
     --border-radius-lg: 1.5rem;
     --border-radius-md: 0.75rem;
     --transition-smooth: all 0.3s ease;
-    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.329);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.329);
+
+}
+body.dark-mode {
+    background-color: var(--bg-light);
+    color: var(--text-main);
 }
 
 /* RESET ET STYLES DE BASE */
@@ -37,6 +71,12 @@ body {
     background-color: var(--bg-light);
     line-height: 1.6;
     overflow-x: hidden;
+}
+.bg-light{
+    background-color: var(--bg-light) !important;
+}
+.text-muted {
+    color: var(--text-muted)  !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -54,19 +94,20 @@ a {
 .navbar {
     transition: var(--transition-smooth);
     padding: 1rem 0;
+    background-color: var(--bg-card) !important;
 }
 
 .navbar-brand {
     font-family: var(--font-heading);
     font-weight: 800;
     font-size: 1.5rem;
-    color: var(--primary-color) !important;
+    color: var(--text-main) !important;
     letter-spacing: -0.5px;
 }
 
 .nav-link {
     font-weight: 500;
-    color: var(--secondary-color) !important;
+    color: var(--text-main) !important;
     margin: 0 0.5rem;
     position: relative;
 }
@@ -101,6 +142,8 @@ a {
     box-shadow: var(--shadow-md);
 }
 
+    
+
 /* LAYOUT GÉNÉRAL */
 section {
     padding: var(--section-padding);
@@ -112,6 +155,8 @@ main {
 .card {
     border-radius: var(--border-radius-md);
     transition: var(--transition-smooth);
+    background-color: var(--bg-card);
+    color: var(--text-main);
 }
 
 .card:hover {
@@ -119,7 +164,7 @@ main {
     box-shadow: var(--shadow-md) !important;
 }
 .contact-form {
-    background: var(--white);
+    background: var(--bg-card);
     padding: 2rem;
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-sm);
@@ -136,7 +181,7 @@ main {
 
 
 
-/* COMMIT 4 */
+
 /* SECTION HERO */
 #hero {
     min-height: 100vh;
@@ -191,14 +236,7 @@ main {
     text-align: center;
 }
 
-/* .hero img {
-    transition: var(--transition-smooth);
-    
-}
 
-.hero img:hover {
-    transform: scale(1.02) rotate(1deg);
-} */
 
 /* BENTO GRID (Comment ça marche) */
 
@@ -213,18 +251,19 @@ main {
 
 .card-bento {
     border: 1px solid rgba(0,0,0,0.05);
-    background: var(--white);
+    background: var(--bg-card);
 }
 
 /* CATÉGORIES & EFFETS HOVER */
 .category-card {
     cursor: pointer;
     border: 1px solid transparent !important;
+    box-shadow: #767f88b4;
 }
 
 .category-card:hover {
     border-color: var(--primary-color) !important;
-    background-color: var(--white);
+    background-color: var(--bg-card);
 }
 
 .category-card i {
@@ -236,24 +275,26 @@ main {
     color: var(--accent-color) !important;
 }
 
-/* 10. TÉMOIGNAGES Carousel*/
+/*  TÉMOIGNAGES Carousel*/
 #testimonialCarousel {
-    padding: 2rem 0;
+    padding: 1rem 0;
 }
 
 .carousel-item img {
     border: 4px solid var(--white);
     box-shadow: var(--shadow-sm);
+    
 }
 #back-to-top {
     position: fixed;
-    bottom: 20px;
+    bottom: 10px;
     right: 10px;
     z-index: 999;
     width: 50px;
     height: 50px;
     border-radius: 50%;
 }
+
 /* RESPONSIVE DESIGN */
 
 /* Tablettes*/
@@ -267,13 +308,53 @@ main {
     }
 
     .navbar-collapse {
-        background: var(--white);
+        background: var(--bg-card);
         padding: 1rem;
         border-radius: var(--border-radius-md);
         margin-top: 1rem;
         box-shadow: var(--shadow-md);
     }
 }
+body.dark-mode {
+    background-color: #4e464634;
+    color: rgb(15, 15, 15);
+}
+
+body.dark-mode .navbar {
+    background-color: #1e1e1e !important;
+}
+
+body.dark-mode .card {
+    background-color: #1d1d1d;
+    color: white;
+}
+
+body.dark-mode h1,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h6,
+body.dark-mode a {
+    color: white !important;
+}
+body.dark-mode .fw-bold{
+    color: #b10786
+}
+body.fw-bold.dark-mode h2,
+body.lead.dark-mode p {
+    color: white !important
+}
+body.dark-mode .btn-light {
+    background-color: white;
+    color: #121212 !important;
+    border-color: white;
+}
+body.dark-mode .cta-section{
+    background-color: #680750 !important;
+}
+body.dark-mode .carousel-item {
+    background-color: #f7efef;
+}
+
 
 /* Mobiles */
 @media (max-width: 767px) {
@@ -330,10 +411,21 @@ img {
     transition: all 0.3s ease;
 }
 .navbar.scrolled {
-    background-color: #7c7777 !important;
+    background-color: #93f5f8 !important;
     padding-top: 5px;
     padding-bottom: 5px;
     box-shadow: 0 2px 10px rgba(110, 104, 104, 0.2);
 }
 
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
 
