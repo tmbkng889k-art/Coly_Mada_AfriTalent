@@ -56,7 +56,7 @@ toggleBtn.addEventListener('click',()=> {
 
    
 });
-
+// COMPTEURS ANIMES
     const animateCounters = () => {
         const counters = document.querySelectorAll('.counter');
         const speed = 200;
@@ -78,7 +78,7 @@ toggleBtn.addEventListener('click',()=> {
         });
     };
 
-
+// INTERACTIONS OBSERVE ANIMATION AU SCROLL
     const revealElements = document.querySelectorAll('.reveal');
     
     const revealObserver = new IntersectionObserver((entries) => {

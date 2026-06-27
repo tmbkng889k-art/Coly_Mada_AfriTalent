@@ -7,14 +7,14 @@
     --primary-color: #4e6fca;       
     --primary-hover: #142c5e;
     --secondary-color: #a0177e; 
-    --bg-light:rgb(255, 255, 255);
     --text-main: #ffffff;    
     --accent-color: #f59e0b;                   
-    --text-muted: #555;
+    --text-muted: #666666;
     --contact-bg: #a2c1fa;
     --bg-color:#ffffff;
     --text-color: #131212;
     --bg-card: #f8f9fa;
+    --bg-light: rgba(0, 0, 0, 0.205);
 
 
 
@@ -41,6 +41,7 @@
     box-sizing: border-box;
 }
 
+
 body {
     font-family: var(--font-main);
     color: var(--text-color);
@@ -53,10 +54,10 @@ body {
     background-color: var(--bg-light) !important;
 }
 .text-muted {
-    color: var(--text-muted);
+    color: var(--text-muted) !important;
 }
 
-h2, h3, h4, h5, h6 {
+h1,h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     color: var(--text-color);
     font-weight: 800;
@@ -78,7 +79,7 @@ a {
     font-family: var(--font-heading);
     font-weight: 800;
     font-size: 1.5rem;
-    color: var(--text-muted) !important;
+    color: var(--text-muted);
     letter-spacing: -0.5px;
 }
 
@@ -155,7 +156,7 @@ main {
 }
 
 .contact-section .text-muted {
-    color: var(--text-muted) !important;
+    color: var(--text-muted);
 }
 .contact-section i {
     color: var(--primary-color);
@@ -250,13 +251,16 @@ main {
 /* CATÉGORIES & EFFETS HOVER */
 .category-card {
     cursor: pointer;
-    border: 1px solid transparent !important;
-    box-shadow: #767f88b4;
+    background-color: var(--bg-card);
+    border: 1px solid #e5e7eb !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+    transition: var(--transition-smooth);
 }
 
 .category-card:hover {
+    transform: translateY(-6px);
     border-color: var(--primary-color) !important;
-    background-color: var(--bg-card);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .category-card i {
@@ -265,7 +269,7 @@ main {
 
 .category-card:hover i {
     transform: scale(1.2) rotate(-10deg);
-    color: var(--accent-color) !important;
+    color: var(--accent-color);
 }
 
 /*  TÉMOIGNAGES Carousel*/
@@ -286,6 +290,11 @@ main {
     width: 50px;
     height: 50px;
     border-radius: 50%;
+}
+/* SECTION FOOTER */
+#current-year{
+    color: white;
+    
 }
 
 /* RESPONSIVE DESIGN */
@@ -309,52 +318,49 @@ main {
     }
 }
 
-
+/* DARK/LIGHT MODE FONCTIONNEL */
 body.dark-mode {
     --bg-color: #121212;
     --text-color: #ffffff;
-    --text-muted: #cccccc;
+    --text-muted: #d0d0d0;
     --bg-card: #1e1e1e;
 }
-
+body.dark-mode .text-muted{
+    color:#ffffff !important;
+}
+body.dark-mode .form{
+    background-color: #9cb1ec;
+}
 body.dark-mode .navbar {
     background-color: #1e1e1e;
 }
-
-body.dark-mode .card {
-    background-color: #1d1d1d;
-    color: white;
+body.dark-mode .category-card {
+    background-color: #1e1e1e;
+    border: 1px solid #333 !important;
+}
+body.dark-mode .category-card:hover {
+    border-color: var(--primary-color) !important;
 }
 
-body.dark-mode h1,
-body.dark-mode h3,
-body.dark-mode h4,
-body.dark-mode h6,
-body.dark-mode a {
-    color: white;
+
+.form {
+    background-color: #000000;
+    color: rgb(255, 253, 253);
 }
-body.dark-mode h1.fw-bold{
-    color: #ffffff !important;
-}
-body.dark-mode h2,
-body.dark-mode p {
-    color: white !important
+
+p{
+    color:var(--text-color)
 }
 body.dark-mode .btn-light {
     background-color: white;
-    color: #121212 !important;
+    color: #121212;
     border-color: white;
 }
 body.dark-mode .cta-section{
     background-color: #680750 !important;
 }
 body.dark-mode .carousel-item {
-    background-color: #f7efef;
-}
-body.dark-mode .contact-section {
-    background-color: var(--bg-card);
-    color: var(--text-color);
-
+    background-color: #1e1e1e;
 }
 
 body.dark-mode .contact-section i {
