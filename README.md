@@ -45,7 +45,7 @@ Il a été développé dans un objectif pédagogique afin de mettre en pratique 
 
 <img src="images/Capture-site1.png" alt="Page Accueil AfriTalent" width="500">
 <img src="images/Capture-site2.png" alt="Nos Ctégories de services" width="500">
-<img src="images/Capture-site3.png" alt="Nous contacter" width="500">
+<img src="images/Cgapture-site3.png" alt="Nous contacter" width="500">
 
 ---
 
